@@ -61,15 +61,3 @@ io.sockets.on('connection', function(socket) {
 http.listen(3000, () => {
     console.log('server listening on port: 3000');
 });
-
-/*mongoose.connect('mongodb://localhost:27017');
-var db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-
-db.once('open', function() {
-	console.log('mondodb connected at: mongodb://localhost:27017');
-	app.listen(3000, () => {
-		console.log('server listening on port: 3000');
-	});
-});*/
