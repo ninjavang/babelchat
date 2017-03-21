@@ -46,15 +46,13 @@ io.sockets.on('connection', function(socket) {
         else{
             request('http://www.transltr.org/api/translate?text='+data.msg+'&to='+data.toLang+'&from='+data.fromLang, function (error, response, body) {
                 var msg = JSON.parse(body); 
-                console.log(msg.translationText);
-                console.log(msg)
                 io.to(data.room).emit('message', msg.translationText); 
             });
         }
     })
 
     socket.on('disconnect', function(){
-        console.log('user disconnected');
+        console.log('a user disconnected');
     });
 });
 
